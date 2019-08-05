@@ -1,7 +1,7 @@
 # DP 050 - Migrating SQL Workloads to Azure
 # Lab 1 - Azure Architecture Considerations
 
-**Estimated Time**: 45 minutes
+**Estimated Time**: 50 minutes
 
 **Pre-requisites**: There are no pre-requisite steps to perform this lab.
 
