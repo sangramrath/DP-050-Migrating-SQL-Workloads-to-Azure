@@ -140,7 +140,7 @@ The main task for this exercise is as follows:
 5. After creation of the file share, select … at the right side of the fileshare created
 6. Select **Connect** from the dropdown list
 
-![Drop Down List](/dropdown.png)
+![Drop Down List](/~dropdown.png)
 
 7. In the Connect blade, select drive letter **U:**
 8. Copy the connection command syntax from the text listed under Alternatively, run this command if they key doesn’t begin with a forward slash:
