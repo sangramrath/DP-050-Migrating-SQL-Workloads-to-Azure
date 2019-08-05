@@ -22,14 +22,9 @@ After completing this lab, you will be able to:
   
 You are the senior data engineer of AdventureWorks and are preparing for a Data Modernization project. You will begin by performing an inventory of the SQL Servers that exist in your environment using a tool. You will then perform an assessment of the server to identify any issues that need to be resolved prior to any modernization work that will be undertaken. One of your on-premises SQL Servers is used to process sales for the business and you want to ensure that your workloads can be handled the target service that you migrate to.
 
-At the end of this lab, you will have:
-
-1. Build your Data Estate Inventory using Map Toolkit
-2. Identify Migration candidates using Data Migration Assistant
-
 ## Exercise 1: Build your Data Estate Inventory using Map Toolkit
 
-In this lab, you will demonstrate use the Microsoft Assessment and Planning Toolkit to collect information about a SQL Server instance running on your machine
+In this lab, you will  use the Microsoft Assessment and Planning Toolkit to collect information about a SQL Server instance running on an on-premises server with SQL Server 2008 R2.
 
 Estimated Time: 25 Minutes
 
@@ -120,6 +115,8 @@ The main task for this exercise is as follows:
 1. Use the Data Migration Assistant.
 
 ### Task 1: Install the Data Migration Assistant (DMA) on Windows
+
+> **Note**: If Data Migration Assistant is already installed, you can skip this task.
 
 1. Go to [https://www.microsoft.com/en-us/download/details.aspx?id=53595](https://www.microsoft.com/en-us/download/details.aspx?id=53595)
 1. Confirm that your environment supports the software by checking the required System Requirements.

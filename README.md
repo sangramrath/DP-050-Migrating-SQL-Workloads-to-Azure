@@ -14,12 +14,13 @@ The students will use two tools in the prescribed Data Platform Modernization st
 
 ## Lab 3 - Migrate SQL Workloads to Azure Virtual Machines
 
-The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server to an Azure Virtual Machine containing a SQL Server Instance. They will then perform a migration using Backup and Restore to move the database.  They will then confirm that the migration has been successful.
+The students will configure the environments for a data migration, including the provisioning of a SQL Server VM on Azure.
+They will then perform a data migration to SQL Server in Azure Virtual Machines by transfering databases from a SQL Server 2008 R2 environment using Data Migration Assistant (DMA).
 
 ## Lab 4 - Migrate SQL Workloads to SQL Database
 
-The students will perform an online migration using the Azure Database Migration Service from an on-premises SQL Server to an Azure SQL Database. Prior to this the student will determine the right SQL Server instance option in Azure to migrate to. They will finalize the migration by using a migration tool to load and move data into the Azure SQL Database.
+The students will perform an offline migration using the Azure Database Migration Assistant(DMA) from an on-premises SQL Server to an Azure SQL Database. Prior to this the student will determine the right SQL Server instance option in Azure to migrate to. They will finalize the migration by using a migration tool to load and move data into the Azure SQL Database.
 
 ## Lab 5 - Migrate SQL Workloads to SQL Database Managed Instance
 
-The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server to an Azure SQL Database Managed instance. They will then perform an online migration using the Azure Database Migration Service. They will also migrate the data and load it into the managed instance before checking for application compatibility for an application that accesses the database.
+The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server to an Azure SQL Database Managed instance. They will then perform an online migration using the Azure Database Migration Service. They will also migrate the data and load it into the managed instance before checking for application compatibility for an application that accesses the database. This lab is in a simulated environment.
