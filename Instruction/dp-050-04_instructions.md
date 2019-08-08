@@ -50,7 +50,7 @@ Note: This task can be fully completed in the Azure Portal
 1. Go to the [Azure Shell](https://shell.azure.com)
 1. Log on to your Azure Subscription with the credentials used for this training
 
- ![Welcome to Azure Shell Sign in Window](../../images/azureshell.png)
+ ![Welcome to Azure Shell Sign in Window](/images/azureshell.png)
 
 3. Select Bash as the scripting environment
 
@@ -353,7 +353,18 @@ In this task you will configure the Azure Database Migration Service to enable a
 
     Alternatively, you can insert some records in the **Productcategory** table in the source database using the following command (on the SQL instance that was set as the source database)
 
-![T-SQL insert statement](/images/sqlinsert.png)
+```sql
+USE [AdventureWorksLT2008R2]
+GO
+
+INSERT INTO [Sales LT].[ProductCategory]
+ ([ParentProductCategoryID]
+ ,[Name]
+ ,[ModifiedDate])
+VALUES
+ (1, ' Myproduct', getdate())
+
+```
 
     Then review the Incremental data sync tab and explore the insert.
 
