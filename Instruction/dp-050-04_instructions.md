@@ -217,9 +217,6 @@ The Data Migration Assistant window will look similar to:
 
 **Note:** All database objects will now be migrated to Azure SQL Database, this migration can take up to 10 minutes to complete 
 
-### Task 3: Select the tables for data migration
-
-Upon completion of Schema Migration in the previous task: 
 
 ## Exercise 3: Migrate on-premises databases to Azure SQL Database (online)
 
@@ -368,7 +365,7 @@ VALUES
 
     Then review the Incremental data sync tab and explore the insert.
 
-30. Click **Start Cutover**
+30. Select the database and then click **Start Cutover**
 1. Check **Confirm**
 1. Check **Validate my database(s)**
 1. Check all the validation options

@@ -64,6 +64,9 @@ The main task for this exercise is as follows:
     Review the Disks settings, accept without any changes.
 
 1. Select **Next: Networking**
+
+    Review the Networking settings, accept without any changes.
+
 1. Select **Next: Management**
 
     Review the Management settings, and change Boot Diagnostics:
@@ -75,9 +78,9 @@ The main task for this exercise is as follows:
 
     On the SQL Server settings tab complete the following information:
 
-    a. SQL connectivity: **select Public (Internet)**
-    b. SQL Authentication: **Select Enable**
-    c. Type **Pa55w.rd.123456789** in the Password box
+    1. SQL connectivity: **select Public (Internet)**
+    1. SQL Authentication: **Select Enable**
+    1. Type **Pa55w.rd.123456789** in the Password box
 
 15. Select **Review + create**
 
@@ -85,7 +88,7 @@ The main task for this exercise is as follows:
 
     a. Select **Create** to initiate the Virtual Machine (VM) creation.
 
-**Note:** This step could take about 10 minutes to complete
+    **Note:** This step could take about 10 minutes to complete
 
 16.	Upon completion of the VM creation, open the Virtual Machine blade.
 17.	 Select the **sql2017vm** you created.
@@ -114,16 +117,18 @@ The main task for this exercise is as follows:
 
 ### Task 1: Create an Azure Storage Account
 
-1. In the [Azure portal] (https://portal.azure.com), select the **Storage Accounts** blade.
+1. In the [Azure portal](https://portal.azure.com), select the **Storage Accounts** blade.
 2. Select **Add**.
 3. In the Create storage account window complete the following information:
-    a. Resource Group: Select **Existing**
-    b. select the **DP-050-Training** resource group you created in the previous exercise
-    c. Storage account name: **dp050storagexxxx** (where xxxx) is a random number of characters
-    d. Location: select the location closest to where you created the virtual machine in the previous exercise.
-    e. Leave other default settings as is.
-4. Skip the Advanced and Tags section by clicking on **Review + create**
-5. Select **Create**
+
+    1. Resource Group: Select **Existing**
+    1. select the **DP-050-Training** resource group you created in the previous exercise
+    1. Storage account name: **dp050storagexxxx** (where xxxx) is a random number of characters
+    1. Location: select the location closest to where you created the virtual machine in the previous exercise.
+    1. Leave other default settings as is.
+
+1. Skip the Advanced and Tags section by clicking on **Review + create**
+1. Select **Create**
 
     **Note:**  this deployment could take a few minutes
 
@@ -139,9 +144,6 @@ The main task for this exercise is as follows:
 4. Select **Create**
 5. After creation of the file share, select … at the right side of the fileshare created
 6. Select **Connect** from the dropdown list
-
-![Drop Down List](https://github.com/MicrosoftLearning/DP-050-Migrating-SQL-Workloads-to-Azure/blob/master/images/dropdown.png)
-
 7. In the Connect blade, select drive letter **U:**
 8. Copy the connection command syntax from the text listed under Alternatively, run this command if they key doesn’t begin with a forward slash:
 
@@ -190,14 +192,25 @@ The main task for this exercise is as follows:
 2.	Copy the text
 3.	In SQL Management studio, create a new query while connected to the local server (LONDON)
 4.	Paste the text from the MapNetworkdrive into the query window
-5.	Change the query to reflect the following screenshot and run the command lines through the xp_cmhdshell stored procedure.
- ![sp_configure options](https://github.com/MicrosoftLearning/DP-050-Migrating-SQL-Workloads-to-Azure/blob/master/images/cmdshell.png)
+5.	Change the query to reflect the following screenshot and run the command lines through the xp_cmdshell stored procedure.
+
+```sql
+SP_CONFIGURE 'show advanced options', 1
+RECONFIGURE
+SP_CONFIGURE 'xp_cmdshell', 1
+RECONFIGURE
+GO
+EXEC xp_cmdshell 'cmdkey /add:dp050storagexxxx.file.core.windows.net /user:Azure\dp050storagexxxx /pass:Mcty80xn7j'
+EXEC xp_cmdshell 'net use U: \\dp050storagexxxx.file.core.windows.net\backupshare /persistent:Yes'
+EXEC xp_cmdshell 'dir u:'
+```
+
 6.	Run the query and validate that the networkdrive is accessible
 7.	Save the query in the Labfiles folder as **MapNetworkdrive.sql**
 8.	Start a new query window and disable xp_cmdshell by running the following query:
 
 ```sql
-    SP_CONFIGURE ‘xp_cmdshell’,1
+    SP_CONFIGURE ‘xp_cmdshell’,0
 ```
 
 9.	In Object Explorer, select the Azure VM SQL Server instance and create a new query
@@ -219,10 +232,10 @@ The main task for this exercise is as follows:
 
 1.	In the SQL Server 2008 R2 lab environment, open the application **“Microsoft Data Migration Assistant”**
 2.	Select **+**, this will open the dialog for a new project and type in the following information:
-    a.	Project Type: **Migration**
-    b.	Project Name: **Migration to SQL VM**
-    c.	Source server type: **SQL Server**
-    d.	Target server type: **SQL Server on Azure Virtual Machines**
+    1. Project Type: **Migration**
+    1. Project Name: **Migration to SQL VM**
+    1. Source server type: **SQL Server**
+    1. Target server type: **SQL Server on Azure Virtual Machines**
 3.	Click **Create**
 4.	Click **Next**
 5.	In the source server details Servername dialog box, enter the **Server name of localhost**
@@ -235,7 +248,7 @@ The main task for this exercise is as follows:
     •	AdventureworksDW2008_4M
     •	Reportserver
     •	ReportServerTempDB
-12.	In the Shared Location Dialog box type: **U:\**
+12.	In the Shared Location Dialog box type: U:\
 13.	Review the select Logins window
 14.	Click **StartMigration**
 

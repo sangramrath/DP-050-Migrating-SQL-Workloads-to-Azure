@@ -149,7 +149,7 @@ The main task for this exercise is as follows:
 ### Task 13: The Report (1 year)
 
 1. Click **Next**
-1. Note at the top (under "View report") that the Timeframe defaults to 1 year
+1. Note at the top (under "View report") that the Timeframe defaults to 5 year
 1. scroll down to the report and investigate the estimated breakdown of costs for on-premises vs Azure
 1. Where is the majority of the spend for on-Premises?
 1. Investigate where the largest cost saving is
