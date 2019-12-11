@@ -141,9 +141,10 @@ The main task for this exercise is as follows:
         5. Click **Create**
         6. Click **Next**
         7. In the **Connect to a Server**dialog box, enter the  **Server name** of **localhost**
-        8. Click **Connect**
-        9. Click all databases you wish to assess, **Add**
-        10. Click **Start Assessment**
+        8. **Uncheck** the box for 'Encrypt connection'
+        9. Click **Connect**
+        10. Click all databases you wish to assess, **Add**
+        11. Click **Start Assessment**
 
 1. Review the SQL Server feature parity and compatibility issues found. Note how many Feature Parity issue there are.
 
