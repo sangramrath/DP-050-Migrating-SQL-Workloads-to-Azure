@@ -1,1 +1,1 @@
-There are no solution files for this lab
+There is no lab for this module

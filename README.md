@@ -23,4 +23,4 @@ The students will perform an offline migration using the Azure Database Migratio
 
 ## Lab 5 - Migrate SQL Workloads to SQL Database Managed Instance
 
-The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server to an Azure SQL Database Managed instance. They will then perform an online migration using the Azure Database Migration Service. They will also migrate the data and load it into the managed instance before checking for application compatibility for an application that accesses the database. This lab is in a simulated environment.
+There is no lab for this module
