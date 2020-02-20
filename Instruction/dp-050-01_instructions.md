@@ -218,7 +218,7 @@ The main task for this exercise is as follows:
 
 1. Read the following scenario
 
-    The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large, and rapidly growing by several terabytes per year. The existing SAN storage that the databases are located on is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins just to keep everything running
+      The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large at 12TB, and rapidly growing by several terabytes per year. The application also has tight integration with SQL Server Reporting Services for the reporting functionality. The existing SAN storage that the databases are located on is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins just to keep everything running.
 
 1. From the scenario, which Database Platform Technology would be appropriate?
 
@@ -226,7 +226,7 @@ The main task for this exercise is as follows:
 
 1. Read the following scenario
 
-    The customer in this example has a SQL Server that stores databases that fulfil departmental needs. The server on which the databases are host is a quad core server, with 16GB of memory and is used as a backend to simple data access for spreadsheets and an Access form. There is a total of 6 databases that takes up 350 MB in total. The maximum number of concurrent connection to this server is 12.
+      The customer in this example has a SQL Server that stores databases that fulfil departmental needs. The server on which the databases are host is a quad core server, with 16GB of memory and is used as a backend to simple data access for spreadsheets and an Access form. There is a total of 6 databases that takes up 350 MB in total. The maximum number of concurrent connections to this server is 12.
 
 1. From the scenario, which Database Platform Technology would be appropriate?
 
