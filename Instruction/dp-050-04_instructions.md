@@ -257,7 +257,7 @@ This task will be completed using SQL Management Studio on the SQL 2008 R2 Virtu
 1. If the **SQL Server Agent Fails to start**, start the agent manually by right-clicking on **SQL Server Agent in SQL Management Studio | Object Explorer | SQL Server Agent** and Start the service
 1. Set the database recovery model for the **AdventureworksLT2008R2** database to FULL by executing the following query in a new query window:
 
-```sql 
+```sql
 ALTER DATABASE AdventureworksLT2008R2 SET RECOVERY FULL WITH NO_WAIT
 ```
 
@@ -289,13 +289,16 @@ In this task you will configure the Azure Database Migration Service to enable a
 
 **Note:** This deployment can take up to 10 minutes
 
-12.Upon completion of the deployment, click Go to Resource
+12. Upon completion of the deployment, click Go to Resource
 
     Optional, you could add the Azure Data Migration Service to the left blade in the Azure portal
 
     a) Locate the Azure Data Migration Services in All Services on the Azure Portal 
+    
     b) Check the star icon to add Azure Data Migration Services to the left blade in the Azure portal
+    
     c) Expand the left blade to Azure Data Migration Service
+    
     d) Select the Data Migration Service 
 
 13. Click New Migration Project
@@ -363,7 +366,7 @@ VALUES
 
 ```
 
-    Then review the Incremental data sync tab and explore the insert.
+Then review the Incremental data sync tab and explore the insert.
 
 30. Select the database and then click **Start Cutover**
 1. Check **Confirm**

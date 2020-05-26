@@ -100,7 +100,7 @@ The main task for this exercise is as follows:
 
 21.	Click save
 
-``` shell
+```shell
 Results: After you completed this exercise you have a SQL Server 2017 instance running in an Azure Virtual Machine.
 ```
 
