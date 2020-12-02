@@ -1,6 +1,6 @@
 # DP-050-Migrating-SQL-Workloads-to-Azure
 
-During this course, the students will first explore the preparation steps that are required to help with a sucessful Data Modernization Project, and the tools that can help support them in the various stages of such a project. They will then explore the different methods of migrating SQL workloads to a range of different SQL Services that run in Azure.
+During this course, the students will first explore the preparation steps that are required to help with a successful Data Modernization Project, and the tools that can help support them in the various stages of such a project. They will then explore the different methods of migrating SQL workloads to a range of different SQL Services that run in Azure.
 
 The following is a summary of the lab objectives for each module:
 
@@ -15,7 +15,7 @@ The students will use two tools in the prescribed Data Platform Modernization st
 ## Lab 3 - Migrate SQL Workloads to Azure Virtual Machines
 
 The students will configure the environments for a data migration, including the provisioning of a SQL Server VM on Azure.
-They will then perform a data migration to SQL Server in Azure Virtual Machines by transfering databases from a SQL Server 2008 R2 environment using Data Migration Assistant (DMA).
+They will then perform a data migration to SQL Server in Azure Virtual Machines by transferring databases from a SQL Server 2008 R2 environment using Data Migration Assistant (DMA).
 
 ## Lab 4 - Migrate SQL Workloads to SQL Database
 
