@@ -141,31 +141,6 @@ The main tasks for this exercise are:
     | Name | backupshare |
     | Quota | 200 GiB |
 
-<!--1. In the list of file shares, on the right of the line for **backupshare**, select **…** and then select **Connect**.
-1. In the **Connect** page, in the **Drive letter** list, select **U**.
-1. In the lower right of the command box, select the **Copy to clipboard** button.
-
-    The command text will be similar to:
-
-    ```shell
-    $connectTestResult = Test-NetConnection 
-        -ComputerName dp050storagexxx.file.core.windows.net -Port 445
-    if ($connectTestResult.TcpTestSucceeded) {
-        # Save the password so the drive will persist on reboot
-        cmd.exe /C "cmdkey /add:`"dp050storagexxx.file.core.windows.net`" /
-            User:`"Azure\dp050storagexxx`" /
-            pass:`"baRKBgx4lTpQRZS0g2IZfuxCsm7ll5oZ0TBhXeRlR6clNjHYvmTBHXy1CsX0fVUQ==`""
-        # Mount the drive
-        New-PSDrive -Name U -PSProvider FileSystem -Root "\\dp050storagexxx.file.core.windows.net\backupshare" -Persist
-    } else {
-        Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to 
-        make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, 
-        Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
-    }
-    ```
-
-1. Open **Notepad** and paste the command. Save the file into the **Labfiles** folder as **MapNetworkdrive.txt**.-->
-
 Results: You have now successful created an Azure file share which will be used as a shared access location for SQL Server database backup files. In the next exercise you will configure the SQL instances to access the shared location.
 
 ## Exercise 3: Create a connection for the SQL Server instances to connect to the Azure file share
@@ -198,32 +173,7 @@ The main tasks for this exercise are:
 > [!NOTE]
 > In order for SQL Server to be able to connect to a drive letter residing on a file share, you have to map the network drive by running `xp_cmdshell` in SQL Server Management Studio, so that the SQL service account can access the share. Data Migration Assistant uses the SQL service account to backup the database. For security reasons, command line access should be limited to SQL Server service accounts. By default SQL command line is disabled.
 
-<!--1. Open the MapNetworkdrive.txt you created in the previous part of the exercise in Notepad, and the copy the text-->
 1. In SQL Management Studio, in the **Object Explorer**, right-click the **LONDON** server and then select **New Query**.
-<!--1. Paste the text from the MapNetworkdrive into the query window-->
-<!--1. Enter this T-SQL code:
-
-    ```sql
-    SP_CONFIGURE 'show advanced options', 1
-    RECONFIGURE
-    SP_CONFIGURE 'xp_cmdshell', 1
-    RECONFIGURE
-    GO
-    EXEC xp_cmdshell 'cmdkey /add:dp050storagexxxx.file.core.windows.net /user:Azure\dp050storagexxxx /pass:Mcty80xn7j'
-    EXEC xp_cmdshell 'net use U: \\dp050storagexxxx.file.core.windows.net\backupshare /persistent:Yes'
-    EXEC xp_cmdshell 'dir u:'
-    ```
--->
-<!-- The above is correct but you'll have to construct it from parameters. The command is of this form:
-
-net use U: \\<storageaccountname>.file.core.windows.net\<sharename> /u:Azure\<storageaccountname> <storage account key>
-
-e.g. net use P: \\dp050storageajm.file.core.windows.net\backupshare /u:Azure\dp050storageajm RNm/boKPwuAxCX2bFdE6p5gzD6F09swpohgHtJF/joCjxbyvUx/lWELsGghll5OA9mwi8raQP4o5dPWA4rTY7A==
-
-So you can leave out the call to cmdkey.
-
- -->
-
 1. Enter this Transact-SQL code:
 
     ```sql
