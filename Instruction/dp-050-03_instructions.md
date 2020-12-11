@@ -10,13 +10,13 @@
 
 ## Lab Overview
 
-The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server 2008 R2 instance to an SQL Server 2019 running in a virtual machine. They will then perform a migration using Data Migration Assistant to move databases. Finally, they will assess a successful migration.
+The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server 2008 R2 instance to an SQL Server 2017 running in a virtual machine. They will then perform a migration using Data Migration Assistant to move databases. Finally, they will assess a successful migration.
 
 ## Lab Objectives
 
 After completing this lab, you will be able to:
 
-- Create a new virtual machine on Azure that runs SQL Server 2019.
+- Create a new virtual machine on Azure that runs SQL Server 2017.
 - Create an Azure Storage Account and a file share.
 - Perform a migration of SQL Server 2008 R2 databases to SQL Server on an Azure VM.
 
@@ -24,7 +24,7 @@ After completing this lab, you will be able to:
 
 You are the senior database management lead of AdventureWorks and are preparing to run a data modernization project. You will prepare the necessary environment to migrate a set of databases to SQL Server on an Azure virtual machine and perform test migrations using Data Migration Assistant.
 
-## Exercise 1: Create a new virtual machine on Azure that runs SQL Server 2019
+## Exercise 1: Create a new virtual machine on Azure that runs SQL Server 2017
 
 In this exercise, you will create a new virtual machine on Azure, using the Azure Portal.
 
@@ -34,24 +34,24 @@ The task for this exercise is:
 
 1. Create a new virtual machine in the Azure Portal
 
-### Provision a SQL Server 2019 virtual machine
+### Provision a SQL Server 2017 virtual machine
 
 > [!NOTE]
 > If you are running this lab in a hosted lab environment, perform these steps inside that environment.
 
 1. In the [Azure portal](https://portal.azure.com), select **Create a resource**.
-1. In the Marketplace search box, type **SQL Server 2019 on Windows Server 2019** and then press Enter. Under **Showing All Results** select **SQL Server 2019 on Windows Server 2019**.
-1. In the **Select a plan** dropdown list, select **Free SQL Server License: SQL Server 2019 Developer on Windows Server 2019**, and then select **Create**.
+1. In the Marketplace search box, type **SQL Server 2017 on Windows Server 2019** and then press Enter. Under **Showing All Results** select **SQL Server 2017 on Windows Server 2019**.
+1. In the **Select a plan** dropdown list, select **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2019**, and then select **Create**.
 1. In the **Create a virtual machine** wizard, on the **Basics** page, enter these values, and then select **Next: Disks \>**:
 
     | Property | Value |
     | --- | --- |
     | Subscription | Choose your subscription |
     | Resource group | Create a new resource group called **DP-050-Training** |
-    | Virtual machine name | sql2019vm |
+    | Virtual machine name | sql2017vm |
     | Region | Select a region close to you |
     | Availability options | No infrastructure redundancy required |
-    | Image | Free SQL Server License: SQL Server 2019 Developer on Windows Server 2019 - Gen1 |
+    | Image | Free SQL Server License: SQL Server 2017 Developer on Windows Server 2019 - Gen1 |
     | Azure Spot instance | No |
     | Size | Standard_D2_v2 |
     | Username | sqladmin |
@@ -86,11 +86,11 @@ The task for this exercise is:
 1. Next to **DNS name**, select **Configure**.
 1. In the **DNS name label (optional)** textbox, type a unique DNS name and record it.
 
-    For example: sql2019vmxxxx.centralus.cloudapp.azure.com
+    For example: sql2017vmxxxx.centralus.cloudapp.azure.com
 
 1. Select **Save**.
 
-Results: After completing this exercise, you have a SQL Server 2019 instance running in an Azure virtual machine.
+Results: After completing this exercise, you have a SQL Server 2017 instance running in an Azure virtual machine.
 
 ## Exercise 2: Create an Azure storage account and file share
 
@@ -163,7 +163,7 @@ The main tasks for this exercise are:
 
     | Property | Value |
     | --- | --- |
-    | Server name | Enter the fully qualified domain name or IP address of your SQL 2019 VM in Azure. For example: **sql2019vmxxx.centralus.cloudapp.azure.com** |
+    | Server name | Enter the fully qualified domain name or IP address of your SQL 2017 VM in Azure. For example: **sql2017vmxxx.centralus.cloudapp.azure.com** |
     | Authentication | SQL Server |
     | Login | sqladmin |
     | Password | Pa55w.rdPa55w.rd |
@@ -212,7 +212,7 @@ The main tasks for this exercise are:
 
 1. Close SQL Server Management Studio.
 
-## Exercise 4: Perform a Database Migration using SQL Server Data
+## Exercise 4: Perform a Database Migration using SQL Server Data Migration Assistant
 
 In this exercise, you will migrate the data from an on-premises SQL Server to a VM in Azure.
 
@@ -232,7 +232,7 @@ The main tasks for this exercise are:
     | --- | --- |
     | Project type | Migration |
     | Project name | Migration to Azure VM |
-    | Source server type | *SQL Server |
+    | Source server type | SQL Server |
     | Target server type | SQL Server on Azure Virtual Machines |
 
 1. On the **Specify source & target** page, under **Source server details**, enter these values:
@@ -255,9 +255,9 @@ The main tasks for this exercise are:
     | Encrypt connection | Yes |
     | Trust server certificate | Yes |
 
-1. On the **Add databases** page, deselect all the databases except for **AdventureWorks**.
+1. On the **Add databases** page, deselect all the databases except for **AdventureWorks** and **AdventureWorksLT2008TR2**.
 1. In the **Shared location** textbox, type **U:\\** and then select **Next**.
-1. Review the **Select logins** window. There are no logins to migration. Select **StartMigration**
+1. Review the **Select logins** window. There are no logins to migrate. Select **StartMigration**
 
     > [!NOTE]
     > All databases will be backed up to the shared network drive in the Azure Storage file share.
@@ -299,4 +299,7 @@ The main tasks for this exercise are:
 
 1. Upon successful completion of the backup close **SQL Management Studio.**
 
-Results: You have now completed the successful migration of SQL Server databases to SQL Server 2019 running in an Azure VM.
+> [!IMPORTANT]
+> Don't delete the SQL Server VM running in Azure at this end of this lab. You will use it as the source for migration to Azure Database in Lab 4.
+
+Results: You have now completed the successful migration of SQL Server databases to SQL Server 2017 running in an Azure VM.
