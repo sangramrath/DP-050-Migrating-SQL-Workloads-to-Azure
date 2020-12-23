@@ -42,12 +42,13 @@ The main tasks for this exercise are:
 
 ### Open the Total Cost of Ownership (TCO) Calculator
 
-1. Open your browser and navigate to [Azure TCO Calculator](https://azure.microsoft.com/en-us/pricing/tco/calculator/).
+1. Open your browser and navigate to [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/).
 1. Under **Define your workloads**, delete any existing workloads in the **Servers** section.
 
 ### Enter the Database workload
 
-1. Under **Databases**, select **+ Add database**.
+1. Under **Databases**,  delete any existing workloads.
+1. Select **+ Add database**.
 1. In the **Name** textbox, type **Accounting**.
 1. In the **Source** section, choose these values:
 
@@ -63,7 +64,7 @@ The main tasks for this exercise are:
     | Core(s) per proc | 4 |
     | RAM (GB) | 64 |
     | Optimize by | CPU |
-    | SQL Server 2008/2008R2 | Selected |
+    | SQL Server 2008/2008R2 | Slide to the right |
 
 1. In the **Destination** section, choose these values:
 
@@ -80,7 +81,7 @@ The main tasks for this exercise are:
 
 ### Enter the Storage and Networking workloads
 
-1. Under **Storage**, select **+ Add storage**.
+1. Under **Storage**, delete any existing workloads, and then select **+ Add storage**.
 1. In the **Name** textbox, type **Accounting Local Disks**, and then enter these values:
 
     | Property | Value |
@@ -97,14 +98,14 @@ The main tasks for this exercise are:
 ### Adjust assumptions
 
 1. In the **Adjust assumptions** section, in the **Currency** list, select your preferred currency.
-1. Under **Software Assurance coverage (provides Azure Hybrid Benefit)**, select **Windows Server Software Assurance coverage**.
-1. Select **SQL Server Software Assurance coverage**.
+1. Under **Software Assurance coverage (provides Azure Hybrid Benefit)**, slide the **Windows Server Software Assurance coverage** slider to the right.
+1. Slide the **SQL Server Software Assurance coverage** slider to the right.
 
     > [!NOTE]
     > You can use the links in the **Software Assurance** section to learn more about the assurance that is available. There are similar links in subsequent sections.
 
-1. Under **Geo-redundant storage (GRS)**, ensure that **GRS replicates your data to a secondary region that is hundreds of miles away from the primary region** is not selected.
-1. Under **Virtual Machine costs**, ensure that **Enable this for the Calculator to not recommend B-series virtual machines** is not selected.
+1. Under **Geo-redundant storage (GRS)**, ensure that the **GRS replicates your data to a secondary region that is hundreds of miles away from the primary region** slider is slid to the left.
+1. Under **Virtual Machine costs**, ensure that the **Enable this for the Calculator to not recommend B-series virtual machines** slider is slid to the left.
 1. Under **Electricity costs**, in the **Price per KW hour** textbox, enter a realistic value for your location.
 
     > [!NOTE]
