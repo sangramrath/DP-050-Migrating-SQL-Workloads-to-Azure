@@ -39,7 +39,7 @@ The main tasks for this exercise are:
 > If Data Migration Assistant is already installed, you can skip this task.
 
 1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
-1. Open up your web browser, and go to the download page for [Microsoft Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595)
+1. Open up your web browser, and go to the download page for Microsoft Data Migration Assistant, +++https://www.microsoft.com/download/details.aspx?id=53595+++.
 1. Confirm that your environment supports the software by checking the requirements list.
 1. To download **DataMigrationAssistant.msi**, select **Download**, and then select **Run**.
 1. On the **Welcome** screen, select **Next**.

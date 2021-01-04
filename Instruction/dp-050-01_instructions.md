@@ -42,7 +42,7 @@ The main tasks for this exercise are the following:
 
 ### Open the Total Cost of Ownership (TCO) Calculator
 
-1. Open your browser and navigate to [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/).
+1. Open your browser and navigate to the Azure TCO Calculator, +++https://azure.microsoft.com/pricing/tco/calculator/+++.
 1. Under **Define your workloads**, delete any existing workloads in the **Servers** section.
 
 ### Enter the Database workload
