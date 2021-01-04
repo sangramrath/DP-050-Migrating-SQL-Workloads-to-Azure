@@ -29,7 +29,7 @@ In this lab, you will calculate the costs for a migrating databases to Azure.
 
 Estimated Time: 15 Minutes
 
-The main tasks for this exercise are:
+The main tasks for this exercise are the following:
 
 1. Open the Microsoft Total Cost of Ownership (TCO) Calculator
 1. Define a server-based workload
@@ -82,10 +82,11 @@ The main tasks for this exercise are:
 ### Enter the Storage and Networking workloads
 
 1. Under **Storage**, delete any existing workloads, and then select **+ Add storage**.
-1. In the **Name** textbox, type **Accounting Local Disks**, and then enter these values:
+1. Enter these values:
 
     | Property | Value |
     | --- | --- |
+    | Name | Accounting Local Disks |
     | Storage Type | Local Disk/SAN |
     | Disk Type | HDD |
     | Capacity | 3 TB |
@@ -104,27 +105,28 @@ The main tasks for this exercise are:
     > [!NOTE]
     > You can use the links in the **Software Assurance** section to learn more about the assurance that is available. There are similar links in subsequent sections.
 
-1. Under **Geo-redundant storage (GRS)**, ensure that the **GRS replicates your data to a secondary region that is hundreds of miles away from the primary region** slider is slid to the left.
-1. Under **Virtual Machine costs**, ensure that the **Enable this for the Calculator to not recommend B-series virtual machines** slider is slid to the left.
+1. Under **Geo-redundant storage (GRS)**, ensure that the toggle beside **GRS replicates your data to a secondary region that is hundreds of miles away from the primary region** is turned off.
+1. Under **Virtual Machine costs**, ensure that the toggle beside **Enable this for the Calculator to not recommend B-series virtual machines** is turned off.
 1. Under **Electricity costs**, in the **Price per KW hour** textbox, enter a realistic value for your location.
 
     > [!NOTE]
     > You can find approximate electricity prices at [Global electricity prices](https://www.statista.com/statistics/263492/electricity-prices-in-selected-countries/). These prices are in USD ($). Convert them to an approximate value in your preferred currency.
 
-1. Under **Storage costs**, leave all the values at their defaults.
-1. Under **IT labor costs**, leave all the values at their defaults.
-1. Under **Other assumption**, expand each section and look at the associated costs.
+1. Under **Storage costs**, keep app the default values.
+1. Under **IT labor costs**, keep all the default values.
+1. Under **Other assumption**, expand each section and examine the associated costs.
 1. At the bottom of the page, select **Next**.
 
 ### Investigate the 5 year report
 
 1. On the **View report** page, note that the **Timeframe** defaults to **5 years**.
-1. Scroll down the report and investigate the estimated breakdown of costs for on-premises systems and Azure. Make a note of this information:
+1. Scroll down to display the report, and note the estimated costs for on-premises systems compared to Azure. Make a note of this information:
 
-    - Where is the majority of the spend for on-Premises?
+    - Where is the majority of the spend for on-premises workloads?
     - Where the largest cost saving if you decide to migrate to Azure?
 
-1. Expand each section in turn and investigate the breakdown of costs
+1. Expand each section in turn and investigate the breakdown of costs.
+1. Change the region based on your location, network latency, or data sovereignty requirements, and examine how the costs compare.
 
 ### Investigate the 3 year report
 
@@ -136,41 +138,41 @@ The main tasks for this exercise are:
 
 1. Expand each section in turn and investigate the breakdown of costs
 
-After completing this exercise, you have used the Azure TCO calculator to identify cost differences between on-premises and Azure deployments for Adatum Corporation's Accounting server and its associated databases.
+After completing this exercise, you have used the Azure TCO calculator to identify cost differences between on-premises and Azure deployments for AdventureWorks Corporation's accounting server and its associated databases.
 
 ## Exercise 2: Understand the stages of migration
 
-In this exercise, you will perform examine the server that you are working with to understand the specs of the machine.
+In this exercise, you will examine the specifications of your existing server.
 
 Estimated Time: 15 Minutes
 
 The main tasks for this exercise are:
 
-1. Determine the amount of memory that is being used
-1. To determine the CPU that is being used in the system
-1. Determine the disk configurations on the server
+1. Identify the amount of memory used by the existing server
+1. Discover the type of CPU of the existing server
+1. Determine the disk configuration of the existing server
 
 ### Determine the amount of memory that is being used on the server
 
 1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
-1. Choose any method of your choice to determine how much memory is being used on the server.
+1. Use a method of your choice to determine the amount of memory being used by the server.
 
-    > **Hint**: Use the System Information tools to capture this information
+    > **Tip**: Use System Information, an application included in all modern versions of Windows, to obtain specifications about your server or desktop device. To open System Information, select Start, and then enter System Information into the search field.
 
 1. Make a note of the value in Notepad.
 
 ### Determine the amount of CPU that is being used on the server
 
-1. Choose any method of your choice to determine how CPU resources are being used on the server.
+1. Use a method of your choice to determine how CPU resources are being used on the server.
 1. Make a note of your observations in Notepad.
 
 ### Determine the disk configuration that is being used on the server
 
-1. Choose any method of your choice to determine the disk configuration that is configured on the server.
+1. Use a method of your choice to determine the disk configuration that is configured on the server.
 1. Make a note of the configuration in Notepad.
 1. Save the Notepad into the _Allfiles\Labfiles\Starter\DP-150.1_ folder with the name of ServerSpecs.txt
 
-After completing this exercise, you have collected information on the hardware specs of the server.
+After completing this exercise, you will have collected information on the hardware specifications of the server.
 
 ## Exercise 3: Data Migration Technologies
 
@@ -178,7 +180,7 @@ In this exercise, you will select a data platform technology to help a customer 
 
 Estimated Time: 15 Minutes
 
-The tasks for this exercise are:
+The tasks for this exercise are as follows:
 
 1. Identify the database technology required to facilitate a migration in scenario A.
 1. Identify the database technology required to facilitate a migration in scenario B.
@@ -187,7 +189,7 @@ The tasks for this exercise are:
 
 1. Read the following scenario
 
-      The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large at 12 TB, and rapidly growing by several terabytes per year. The application also has tight integration with SQL Server Reporting Services for its reporting functionality. The existing SAN storage, which the databases are located on, is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins to keep everything running.
+      The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large at 12 TB, and rapidly growing by several terabytes per year. The application also has tight integration with SQL Server Reporting Services for its reporting functionality. The existing SAN storage, which contains the databases, is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins to keep everything running.
 
 1. From the scenario, which database platform technology would be appropriate?
 
@@ -195,11 +197,11 @@ The tasks for this exercise are:
 
 1. Read the following scenario
 
-      The customer in this example has a SQL Server that stores databases that fulfil departmental needs. The server on which the databases are hosted is a quad core server, with 16 GB of memory, and is used as a backend to simple data access for spreadsheets and an Access form. There are six databases in total that take up 350 MB of storage. The maximum number of concurrent connections to this server is twelve.
+      The customer keeps departmental data in databases on a quad-core SQL Server with 16 GB of memory. The server is used as a backend to simple data access for spreadsheets and an Access form. There are six databases in total that take up 350 MB of storage. The maximum number of concurrent connections to this server is twelve.
 
 1. From the scenario, which database platform technology would be appropriate?
 
-After completing this exercise, you have identified the appropriate database technologies to migrate to.
+After completing this exercise, you will have identified the appropriate Azure database technologies for your migration project.
 
 ## Lab Review
 

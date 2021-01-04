@@ -20,7 +20,7 @@ After completing this lab, you will be able to:
 
 ## Scenario
   
-You are the senior data engineer of AdventureWorks and are preparing for a data modernization project. You will begin by performing an inventory of the SQL Servers that exist in your environment using a tool. You will then perform an assessment of the server to identify any issues that need to be resolved prior to any modernization work that will be undertaken. One of your on-premises SQL Servers is used to process sales for the business and you want to ensure that your workloads can be handled the target service that you migrate to.
+You are the senior data engineer of AdventureWorks and are preparing for a data modernization project. You will begin by performing an inventory of the SQL Servers that exist in your environment using a tool. You will then perform an assessment of the server to identify any issues that need to be resolved prior to any modernization work that will be undertaken. One of your on-premises SQL Servers is used to process sales for the business, and you want to ensure that your new Azure services can support your workloads after they are migrated.
 
 ## Exercise 1: Identify migration candidates using Data Migration Assistant
   
@@ -39,7 +39,7 @@ The main tasks for this exercise are:
 > If Data Migration Assistant is already installed, you can skip this task.
 
 1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
-1. In a browser, go to the download page for [Microsoft Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595)
+1. Open up your web browser, and go to the download page for [Microsoft Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595)
 1. Confirm that your environment supports the software by checking the requirements list.
 1. To download **DataMigrationAssistant.msi**, select **Download**, and then select **Run**.
 1. On the **Welcome** screen, select **Next**.
