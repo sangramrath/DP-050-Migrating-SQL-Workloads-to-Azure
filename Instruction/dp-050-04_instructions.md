@@ -110,7 +110,7 @@ Azure Cloud Shell is an interactive shell environment hosted in Azure and manage
 1. In the script, change the value `dp-050-Adventureworksxxx` to a unique database name.
 1. To save the script, press <kbd>CTRL + S</kbd>, type **CreateSQLDBandServer.sh**, and then select **Save**.
 1. To exit the code editor, press <kbd>CTRL + Q</kbd>.
-1. To execute the script, type **sh CreateSQLDBandServer** and then press <kbd>Enter</kbd>.
+1. To execute the script, type **sh CreateSQLDBandServer.sh** and then press <kbd>Enter</kbd>.
 
     When the script has completed successfully, you can validate that the resource group, server, and database have been created in your Azure account subscription.
 

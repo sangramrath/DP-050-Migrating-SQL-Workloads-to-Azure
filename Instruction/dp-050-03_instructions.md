@@ -120,6 +120,9 @@ The main tasks for this exercise are:
     | Account kind | StorageV2 (general purpose v2) |
     | Replication | Locally-redundant storage (LRS) |
 
+    > [!NOTE]
+    > Make a careful note of the storage account name you use. You will need this name later in the lab.
+
 1. On the **Review + create** page, select **Create**.
 
     > [!NOTE]
@@ -179,7 +182,7 @@ The main tasks for this exercise are:
     ```sql
     EXECUTE sp_configure 'show advanced options', 1;
     RECONFIGURE;
-    EXECUTE sp_configure 'xp_cmdshell' 1;
+    EXECUTE sp_configure 'xp_cmdshell', 1;
     RECONFIGURE;
     GO
     EXECUTE xp_cmdshell 'net use U: \\<storageaccountname>.file.core.windows.net\backupshare /persistent:Yes /u:Azure\<storageaccountname> <storageaccountkey>';
