@@ -57,7 +57,7 @@ The main tasks for this exercise are:
     | Property | Value |
     | --- | --- |
     | Project type | Assessment |
-    | Project name | Migration Assessment SQL DB |
+    | Project name | +++Migration Assessment SQL DB+++ |
     | Assessment type | Database Engine |
     | Source server type | SQL Server |
     | Target server type | Azure SQL Database |
@@ -84,7 +84,7 @@ The main tasks for this exercise are:
     | Property | Value |
     | --- | --- |
     | Project type | Assessment |
-    | Project name | Migration Assessment SQL DB MI |
+    | Project name | +++Migration Assessment SQL DB MI+++ |
     | Assessment type | Database Engine |
     | Source server type | SQL Server |
     | Target server type | Azure SQL Database Managed Instance |
@@ -111,7 +111,7 @@ The main tasks for this exercise are:
     | Property | Value |
     | --- | --- |
     | Project type | Assessment |
-    | Project name | Migration Assessment Azure VM |
+    | Project name | +++Migration Assessment Azure VM+++ |
     | Assessment type | Database Engine |
     | Source server type | SQL Server |
     | Target server type | SQL Server on Azure Virtual Machines |
