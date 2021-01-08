@@ -36,7 +36,7 @@ The main tasks for this exercise are:
 ### Install the Data Migration Assistant (DMA) on Windows
 
 > [!NOTE]
-> If Data Migration Assistant is already installed, you can skip this task.
+> Follow the steps in this task even if DMA is already installed, to ensure that you are using the latest version of the tool.
 
 1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
 1. Open up your web browser, and go to the download page for Microsoft Data Migration Assistant, +++https://www.microsoft.com/download/details.aspx?id=53595+++.

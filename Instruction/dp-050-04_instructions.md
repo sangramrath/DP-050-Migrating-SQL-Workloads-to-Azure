@@ -310,6 +310,6 @@ In this task you will configure the Azure Database Migration Service to enable a
     ```
 
 1. When the data migration is complete, select the database and then select **Start Cutover**.
-1. Check **Confirm**and then select **Apply**.
+1. Check **Confirm** and then select **Apply**.
 
 Results: You have now successfully completed an online migration to Azure SQL Database.

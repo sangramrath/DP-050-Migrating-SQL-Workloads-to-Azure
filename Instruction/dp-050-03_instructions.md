@@ -108,7 +108,7 @@ The main tasks for this exercise are:
 1. In the [Azure portal](https://portal.azure.com), select **Create a resource**.
 1. In the **Search the Marketplace** textbox, type **Storage account**, and then press **Enter**.
 1. Under **Showing All Results** select **Storage account**, and then select **Create**.
-1. In the **Create storage account** wizard, on the **Basics** page, enter these values, and then select **Review + create**:
+1. In the **Create storage account** wizard, on the **Basics** page, enter these values:
 
     | Property | Value |
     | --- | --- |
@@ -123,12 +123,12 @@ The main tasks for this exercise are:
     > [!NOTE]
     > Make a careful note of the storage account name you use. You will need this name later in the lab.
 
+1. Select **Review + create**.
 1. On the **Review + create** page, select **Create**.
 
     > [!NOTE]
     > This deployment could take a few minutes
 
-1. Record the storage account name you used.
 1. When the deployment is complete, select **Go to resource**
 1. Under **Settings**, select **Access keys**.
 1. On the **Access keys** page, select **Show keys**, and then under **key1**, record the contents of the **Key** textbox.
@@ -137,18 +137,20 @@ The main tasks for this exercise are:
 
 1. In the storage account page, under **File service** in the left menu, select **File shares**.
 1. On the **File shares** page, select **+ File share**
-1. In the **New file share** page, enter these values, and then select **Create**:
+1. In the **New file share** page, enter these values:
 
     | Property | Value |
     | --- | --- |
     | Name | backupshare |
     | Quota | 200 GiB |
 
+1. Select **Create**.
+
 Results: You have now successful created an Azure file share which will be used as a shared access location for SQL Server database backup files. In the next exercise you will configure the SQL instances to access the shared location.
 
 ## Exercise 3: Create a connection for the SQL Server instances to connect to the Azure file share
 
-In this exercise, you will configure the SQL Server environment to access the Azure file share.
+In this exercise, you will configure the SQL Server environment to access the Azure file share on both the on-premises server and the new Azure VM.
 
 **Estimated Time:** 10 Minutes
 
@@ -171,12 +173,12 @@ The main tasks for this exercise are:
     | Login | sqladmin |
     | Password | Pa55w.rdPa55w.rd |
 
-### Connect the SQL instances to the file shares
+### Connect the on-premises SQL instances to the file shares
 
 > [!NOTE]
 > In order for SQL Server to be able to connect to a drive letter residing on a file share, you have to map the network drive by running `xp_cmdshell` in SQL Server Management Studio, so that the SQL service account can access the share. Data Migration Assistant uses the SQL service account to backup the database. For security reasons, command line access should be limited to SQL Server service accounts. By default SQL command line is disabled.
 
-1. In SQL Management Studio, in the **Object Explorer**, right-click the **LONDON** server and then select **New Query**.
+1. To configure the connection on the on-premises SQL Server, in SQL Management Studio, in the **Object Explorer**, right-click the **LONDON** server and then select **New Query**.
 1. Enter this Transact-SQL code:
 
     ```sql
@@ -191,9 +193,13 @@ The main tasks for this exercise are:
 
 1. In the query text, replace `<storageaccountname>` with the name of the storage account you created earlier. The name must be entered in two places.
 1. Replace `<storageaccountkey>` with the primary access key you recorded for the storage account.
-1. Execute the query and validate that the network drive is accessible.
+1. Execute the query and check that there are no error messages in the results.
+
+    > [!NOTE]
+    > The SQL code maps the network drive U: to the storage account in Azure. However, because this is done in the context of the SQL Service account, you will not see the U: drive in File Explorer or when you use the `net use` command.
+
 1. Save the query in the Labfiles folder as **MapNetworkDrive.sql**
-1. Start a new query window and disable `xp_cmdshell` by running this query:
+1. Start a new query window and disable `xp_cmdshell` on rhe LONDON SQL Server by running this query:
 
     ```sql
     EXECUTE sp_configure 'xp_cmdshell', 0;
@@ -201,11 +207,14 @@ The main tasks for this exercise are:
     ```
 
 1. Close all the queries windows and don't save any files.
-1. In the **Object Explorer**, right-click the SQL Server in Azure, and then select **Connect**.
+
+### Connect the Azure VM SQL instances to the file shares
+
+1. To configure the connection on the Azure VM SQL Server, in the **Object Explorer**, right-click the SQL Server in Azure, and then select **Connect**.
 1. In the **Connect to Server** dialog, in the **Password** textbox, type **Pa55w.rdPa55w.rd** and then select **Connect**.
 1. On the **File** menu, select **Open/File** and then open the **MapNetworkDrive.sql** file that you saved above.
 1. In the status bar at the bottom of the query window, check that you are connected to the Azure VM.
-1. To map the U: drive on the Azure VM, execute the query and validate that the network drive is accessible.
+1. To map the U: drive on the Azure VM, execute the query and check that there are no error messages in the results.
 1. Start a new query window and disable `xp_cmdshell` by running this query:
 
     ```sql
@@ -229,7 +238,7 @@ The main tasks for this exercise are:
 ### Migrate SQL Databases using Data Migration Assistant
 
 1. In the **LON-DEV-01** virtual machine, open **Microsoft Data Migration Assistant** and then select **+**.
-1. In the **New** page, enter these values, and then select **Create**:
+1. In the **New** page, enter these values:
 
     | Property | Value |
     | --- | --- |
@@ -238,6 +247,7 @@ The main tasks for this exercise are:
     | Source server type | SQL Server |
     | Target server type | SQL Server on Azure Virtual Machines |
 
+1. Select **Create**.
 1. On the **Specify source & target** page, under **Source server details**, enter these values:
 
     | Property | Value |
@@ -247,7 +257,7 @@ The main tasks for this exercise are:
     | Encrypt connection | No |
     | Trust server certificate | Yes |
 
-1. Under **Target server details**, enter these values, and then select **Next**:
+1. Under **Target server details**, enter these values:
 
     | Property | Value |
     | --- | --- |
@@ -258,6 +268,7 @@ The main tasks for this exercise are:
     | Encrypt connection | Yes |
     | Trust server certificate | Yes |
 
+1. Select **Next**.
 1. On the **Add databases** page, deselect all the databases except for **AdventureWorks** and **AdventureWorksLT2008TR2**.
 1. In the **Shared location** textbox, type **U:\\** and then select **Next**.
 1. Review the **Select logins** window. There are no logins to migrate. Select **StartMigration**
