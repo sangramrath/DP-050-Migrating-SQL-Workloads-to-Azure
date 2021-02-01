@@ -9,230 +9,200 @@
 
 ## Lab overview
 
-The students will use the information gained in this module to demonstrate an understanding of Data Platform modernization, and why and how organizations should undertake a modernization project at a high level. They will demonstrate how to determine the cost of moving to Azure. They will also gather information about the environment that they are working on. Students will finally determine a data platform modernization strategy that should be used for a given scenario.
+The students will use the information gained in this module to demonstrate an understanding of data platform modernization, and why and how organizations should undertake a modernization project at a high level. They will learn how to determine the cost of moving to Azure. They will also gather information about the environment that they are working on. Students will finally determine a data platform modernization strategy to use for a given scenario.
 
 ## Lab objectives
   
 After completing this lab, you will be able to:
 
-1. Understand Data Platform Modernization
-2. Understand the Stages of Migration
-3. Data Migration Technologies
+- Describe data platform modernization.
+- List the stages of migration.
+- Describe data migration technologies.
 
 ## Scenario
   
-You have recently been hired as a senior data engineer at AdventureWorks and are working with a consultant and architects to initiate a Data Platform Modernization project that meets the organizations technical and business requirements. You will demonstrate an example of how they can calculate the Total Cost of Ownership of migrating to Azure. You then ask a Junior Data Engineer to collect information about the SQL Server that will be migrated to Azure. Then for a given scenario, you will advise the best Azure Data Platform Technology to migrate to for a given scenario.
+You have recently been hired as a senior data engineer at AdventureWorks and are working with a consultant and architects to initiate a data platform modernization project that meets the organization's technical and business requirements. You will calculate the Total Cost of Ownership (TCO) of migrating to Azure. You will ask a junior data engineer to collect information about the SQL Server that will be migrated to Azure. Then you will choose the best Azure data platform technology to migrate to for a given scenario.
 
-At the end of this lab, you will have:
+## Exercise 1: Understand data platform modernization
 
-1. Understand Data Platform Modernization
-2. Understand the Stages of Migration
-3. Data Migration Technologies
-
-## Exercise 1: Understand Data Platform Modernization
-
-In this lab, you will demonstrate how you can calculate the costs for a Databases
+In this lab, you will calculate the costs for a migrating databases to Azure.
 
 Estimated Time: 15 Minutes
 
-The main task for this exercise is as follows:
+The main tasks for this exercise are the following:
 
 1. Open the Microsoft Total Cost of Ownership (TCO) Calculator
-1. Define a Server based workload
-1. Add some storage
-1. Add some networking
+1. Define a server-based workload
+1. Add storage
+1. Add networking
 1. Adjust the currency
-1. Adjust the Electricity costs
-1. Adjust the Other Assumptions
-1. Compare the on-premises and Azure Costs
+1. Adjust the electricity costs
+1. Adjust other assumptions
+1. Compare the on-premises and Azure costs
 
-### Task 1: Open the Total Cost of Ownership (TCO) Calculator
+### Open the Total Cost of Ownership (TCO) Calculator
 
-1. Open your Browser
-1. navigate to [Azure TCO Calculator](https://azure.microsoft.com/en-us/pricing/tco/calculator/)
-1. from the Define workloads section ensure that there are no workloads in the **Servers** Section
+1. Open your browser and navigate to the Azure TCO Calculator, +++https://azure.microsoft.com/pricing/tco/calculator/+++.
+1. Under **Define your workloads**, delete any existing workloads in the **Servers** section.
 
-### Task 2: Enter the Database workload
+### Enter the Database workload
 
-1. In the **Databases** workload section, click on the **+ Add database** hyperlink.
-1. Name the workload **Accounting**
-1. Enter the following under **Source**
-   - Database **Microsoft SQL Server**
-   - License **Enterprise**
-   - Environment **Physical Servers**
-   - Operating System **Windows**
-   - Servers **1**
-   - Procs per server **1**
-   - Core(s) per proc **4**
-   - RAM (GB) **64**
-   - Optimize by **CPU**
-   - SQL Server 2008/2008R2 **True**
-1. Enter the following under **Destination**
-   - Service **SQL Server VM**
-   - Disk Type **SSD**
+1. Under **Databases**,  delete any existing workloads.
+1. Select **+ Add database**.
+1. In the **Name** textbox, type **Accounting**.
+1. In the **Source** section, choose these values:
 
-    > This is the recommendation for production servers in Azure
-   - IOPS **5000**
-   - SQL Server storage **32 GB**
-   - SQL Server Backup **32 GB**
+    | Property | Value |
+    | --- | --- |
+    | Database | Microsoft SQL Server |
+    | License | Enterprise |
+    | Environment | Physical Servers |
+    | Operating system | Windows |
+    | Operating System License | Datacenter |
+    | Servers | 1 |
+    | Procs per server | 1 |
+    | Core(s) per proc | 4 |
+    | RAM (GB) | 64 |
+    | Optimize by | CPU |
+    | SQL Server 2008/2008R2 | Slide to the right |
 
-### Task 3: Enter the Storage workload
+1. In the **Destination** section, choose these values:
 
-1. In the **Storage** workload section
-2. Name the workload **Accounting Local Disks**
-   - Storage Type **Local Disk/SAN**
-   - Disk Type **HDD**
-   - Capacity **3TB**
-   - Backup **1TB**
-   - Archive **0TB**
+    | Property | Value |
+    | --- | --- |
+    | Service | SQL Server VM |
+    | Disk type | SSD |
+    | IOPS | 5000 |
+    | SQL Server storage | 32 GB |
+    | SQL Server Backup | 32 GB |
 
-### Task 4: Enter the Networking workload
+    > [!NOTE]
+    > SSDs are the recommended disk type for production servers in Azure
 
-1. In the **Networking** workload section
-   - Outbound Bandwidth **Leave as default**
+### Enter the Storage and Networking workloads
 
+1. Under **Storage**, delete any existing workloads, and then select **+ Add storage**.
+1. Enter these values:
 
-1. Scroll down the web page and then click on the blue button marked **Next**
+    | Property | Value |
+    | --- | --- |
+    | Name | Accounting Local Disks |
+    | Storage Type | Local Disk/SAN |
+    | Disk Type | HDD |
+    | Capacity | 3 TB |
+    | Backup | 1 TB |
+    | Archive | 0 TB |
 
-### Task 5: Adjust currency
+1. Under **Networking**, in the **Outbound bandwidth** controls, select **1 GB**.
+1. At the bottom of the page, select **Next**.
 
-1. In the **Adjust assumptions** section ensure that the Currency is set to your home currency
+### Adjust assumptions
 
-### Task 6: Software Assurance
+1. In the **Adjust assumptions** section, in the **Currency** list, select your preferred currency.
+1. Under **Software Assurance coverage (provides Azure Hybrid Benefit)**, slide the **Windows Server Software Assurance coverage** slider to the right.
+1. Slide the **SQL Server Software Assurance coverage** slider to the right.
 
-1. in the **Software Assurance coverage (provides Azure Hybrid Benefit)** section
-   - Windows Server Software Assurance coverage **True**
-   - SQL Server Software Assurance coverage **True**
-   - Click on the links and investigate the content
+    > [!NOTE]
+    > You can use the links in the **Software Assurance** section to learn more about the assurance that is available. There are similar links in subsequent sections.
 
-### Task 7: Geo-redundant storage (GRS)
+1. Under **Geo-redundant storage (GRS)**, ensure that the toggle beside **GRS replicates your data to a secondary region that is hundreds of miles away from the primary region** is turned off.
+1. Under **Virtual Machine costs**, ensure that the toggle beside **Enable this for the Calculator to not recommend B-series virtual machines** is turned off.
+1. Under **Electricity costs**, in the **Price per KW hour** textbox, enter a realistic value for your location.
 
-1. in the **Geo-redundant storage (GRS)** section
-   - GRS replicates your data to a secondary region that is hundreds of miles away from the primary region. **Leave as default**
-   - Click on the links and investigate the content
+    > [!NOTE]
+    > You can find approximate electricity prices at [Global electricity prices](https://www.statista.com/statistics/263492/electricity-prices-in-selected-countries/). These prices are in USD ($). Convert them to an approximate value in your preferred currency.
 
-### Task 8: Virtual Machine costs
+1. Under **Storage costs**, keep app the default values.
+1. Under **IT labor costs**, keep all the default values.
+1. Under **Other assumption**, expand each section and examine the associated costs.
+1. At the bottom of the page, select **Next**.
 
-1. in the **Virtual Machine costs** section
-   - Enable this for the Calculator to not recommend B-series virtual machines **Leave as default**
-   - Click on the links and investigate the content
+### Investigate the 5 year report
 
-### Task 9: Electricity costs
+1. On the **View report** page, note that the **Timeframe** defaults to **5 years**.
+1. Scroll down to display the report, and note the estimated costs for on-premises systems compared to Azure. Make a note of this information:
 
-1. in the **Geo-redundant storage (GRS)** section
-   - price per kw hour **enter a realistic value if known**
+    - Where is the majority of the spend for on-premises workloads?
+    - Where the largest cost saving if you decide to migrate to Azure?
 
-     > **NOTE** Global prices for electricity in 2018 can be found here [Global electricity prices in 2018](https://www.statista.com/statistics/263492/electricity-prices-in-selected-countries/). These prices are in USD ($) and will need converting to your home currency
+1. Expand each section in turn and investigate the breakdown of costs.
+1. Change the region based on your location, network latency, or data sovereignty requirements, and examine how the costs compare.
 
-### Task 10: Storage costs
+### Investigate the 3 year report
 
-1. in the **Storage costs** section
-    - Storage procurement cost/GB for local disk/SAN-SSD **Leave as default**
-    - Storage procurement cost/GB for local disk/SAN-HDD **Leave as default**
-    - Storage procurement cost/GB for NAS/file storage **Leave as default**
-    - Storage procurement cost/GB for Blob storage **Leave as default**
-    - Annual enterprise storage software support cost **Leave as default**
-    - Cost per tape drive **Leave as default**
+1. Scroll to the top of the page and then, in the **Timeframe** textbox, select **3 years**.
+1. Scroll down the report and investigate the estimated breakdown of costs for on-premises systems and Azure. Make a note of this information:
 
-### Task 11: IT labor costs
+    - Where is the majority of the spend for on-Premises?
+    - Where the largest cost saving if you decide to migrate to Azure?
 
-1. in the **IT labor costs** section
-    - Number of physical servers that can be managed by a full-time administrator **Leave as default**
-    - Number of virtual machines that can be managed by a full-time administrator **Leave as default**
-    - Hourly rate for IT administrator **Leave as default**
-
-### Task 12: Other assumptions
-
-1. in the **Other assumption** section
-   - Expand each section and look at the associated costs
-
-### Task 13: The Report (1 year)
-
-1. Click **Next**
-1. Note at the top (under "View report") that the Timeframe defaults to 5 year
-1. scroll down to the report and investigate the estimated breakdown of costs for on-premises vs Azure
-1. Where is the majority of the spend for on-Premises?
-1. Investigate where the largest cost saving is
 1. Expand each section in turn and investigate the breakdown of costs
 
-### Task 14: The Report (3 year)
+After completing this exercise, you have used the Azure TCO calculator to identify cost differences between on-premises and Azure deployments for AdventureWorks Corporation's accounting server and its associated databases.
 
-1. scroll to the top of the page
-1. under "View report"
-   - Timeframe **3 years**
-1. scroll down to the report and investigate the estimated breakdown of costs for on-premises vs Azure
-1. How much is the total spend over 5 years?
-1. Where is the majority of the spend for on-Premises?
-1. Expand each section in turn and investigate the breakdown of costs
+## Exercise 2: Understand the stages of migration
 
-> **Result**: After you completed this exercise, you have used the Azure TCO calculator to identify cost differences between on-Premises and Azure deployments for Adatum Corporation's Accounting server and its associated databases
-
-## Exercise 2: Understand the Stages of Migration
-  
-In this exercise, you will perform a discovery of the server that you are working with to understand the specs of the machine.
+In this exercise, you will examine the specifications of your existing server.
 
 Estimated Time: 15 Minutes
-  
-The main task for this exercise is as follows:
 
-1. Determine the amount of memory that is being used 
-1. To determine the CPU that is being used in the system
-1. Determine the disk configurations on the server
+The main tasks for this exercise are:
 
-### Task 1: Determine the amount of memory that is being used on the server.
+1. Identify the amount of memory used by the existing server
+1. Discover the type of CPU of the existing server
+1. Determine the disk configuration of the existing server
 
-1. Choose any method of your choice to determine how much memory is being used on the server. 
+### Determine the amount of memory that is being used on the server
 
-> **Hint**: Use the System information tools to capture this information
+1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
+1. Use a method of your choice to determine the amount of memory being used by the server.
 
-1. Make a note of the value in Notepad.
-
-### Task 2: Determine the amount of CPU that is being used on the server.
-
-1. Choose any method of your choice to determine how much memory is being used on the server.
+    > **Tip**: Use System Information, an application included in all modern versions of Windows, to obtain specifications about your server or desktop device. To open System Information, select Start, and then enter System Information into the search field.
 
 1. Make a note of the value in Notepad.
 
-### Task 3: Determine the disk configuration that is being used on the server.
+### Determine the amount of CPU that is being used on the server
 
-1. Choose any method of your choice to determine how much memory is being used on the server.
+1. Use a method of your choice to determine how CPU resources are being used on the server.
+1. Make a note of your observations in Notepad.
 
-1. Make a note of the value in Notepad.
+### Determine the disk configuration that is being used on the server
 
+1. Use a method of your choice to determine the disk configuration that is configured on the server.
+1. Make a note of the configuration in Notepad.
 1. Save the Notepad into the _Allfiles\Labfiles\Starter\DP-150.1_ folder with the name of ServerSpecs.txt
 
-> **Result**: After you completed this exercise, you have collected information on the hardware specs of the server.
+After completing this exercise, you will have collected information on the hardware specifications of the server.
 
 ## Exercise 3: Data Migration Technologies
 
-In this exercise, you will select a data platform technology to help a customer migrate from an on-premises SQL Server to Azure 
+In this exercise, you will select a data platform technology to help a customer migrate from an on-premises SQL Server to Azure.
 
-Estimated Time: 15 Minutes 
+Estimated Time: 15 Minutes
 
-The main task for this exercise is as follows:
+The tasks for this exercise are as follows:
 
 1. Identify the database technology required to facilitate a migration in scenario A.
 1. Identify the database technology required to facilitate a migration in scenario B.
 
-### Task 1: Identify the database technology required to facilitate a migration in scenario A.
+### Identify the database technology required to facilitate a migration in scenario A
 
 1. Read the following scenario
 
-      The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large at 12TB, and rapidly growing by several terabytes per year. The application also has tight integration with SQL Server Reporting Services for the reporting functionality. The existing SAN storage that the databases are located on is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins just to keep everything running.
+      The customer has an application that uses many databases currently residing in an on-premises version of Microsoft SQL Server 2008. The total database footprint is large at 12 TB, and rapidly growing by several terabytes per year. The application also has tight integration with SQL Server Reporting Services for its reporting functionality. The existing SAN storage, which contains the databases, is almost at capacity, expensive to expand, and nearing the end of its life. The application is critical to the company, with a moderate transaction rate, and any downtime would have significant business impact. Small maintenance windows are available in which to make changes to maximize the availability of the application. The high growth rate has seen more and more time being spent by DBAs and sysadmins to keep everything running.
 
-1. From the scenario, which Database Platform Technology would be appropriate?
+1. From the scenario, which database platform technology would be appropriate?
 
-### Task 2: Identify the database technology required to facilitate a migration in scenario B.
+### Identify the database technology required to facilitate a migration in scenario B
 
 1. Read the following scenario
 
-      The customer in this example has a SQL Server that stores databases that fulfil departmental needs. The server on which the databases are host is a quad core server, with 16GB of memory and is used as a backend to simple data access for spreadsheets and an Access form. There is a total of 6 databases that takes up 350 MB in total. The maximum number of concurrent connections to this server is 12.
+      The customer keeps departmental data in databases on a quad-core SQL Server with 16 GB of memory. The server is used as a backend to simple data access for spreadsheets and an Access form. There are six databases in total that take up 350 MB of storage. The maximum number of concurrent connections to this server is twelve.
 
-1. From the scenario, which Database Platform Technology would be appropriate?
+1. From the scenario, which database platform technology would be appropriate?
 
-> **Result**: After you completed this exercise, you will have identified the appropriate database technologies to migrate to base on.
+After completing this exercise, you will have identified the appropriate Azure database technologies for your migration project.
 
 ## Lab Review
 
 After approximately 45 minutes, the instructor will bring a close to this lab. The class will discuss the findings of each group.
-
