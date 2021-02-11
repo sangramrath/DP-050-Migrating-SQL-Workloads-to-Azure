@@ -4,22 +4,18 @@ During this course, the students will first explore the preparation steps that a
 
 The following is a summary of the lab objectives for each module:
 
-## Lab 1 - Introducing data platform modernization
+## Lab 1 - Azure Architecture Considerations
 
-The students will use the information gained in this module to demonstrate an understanding of data platform modernization, and why and how organizations should undertake a modernization project at a high level. They will demonstrate how to determine the cost of moving to Azure. They will also gather information about the environment that they are working on. Students will finally determine a data platform modernization strategy that should be used for a given scenario.
+The students will use the information gained in this module to demonstrate an understanding of data platform modernization, and why and how organizations should undertake a modernization project at a high level. They will learn how to determine the cost of moving to Azure. They will also gather information about the environment that they are working on. Students will finally determine a data platform modernization strategy to use for a given scenario.
 
 ## Lab 2 - Choosing the right tools for data migrations
 
-The students will use two tools in the prescribed data platform modernization stages to perform a discovery of the environment in an automated way. They will also identify any premigration compatibility issues and define a plan on how to address those issues before performing a migration of an on-premises server. Finally, they will assess how a workload will perform on a target version of Azure SQL Database.
+The students will use the Data Migration Assistant in the prescribed data platform modernization stages to investigate their environment in an automated way. They will also identify any premigration compatibility issues and define a plan on how to address those issues before performing a migration of an on-premises server. Finally, they will assess how a workload will perform on a target version of Azure SQL Database.
 
-## Lab 3 - Migrate SQL workloads to Azure virtual machines
+## Lab 3 – Migrate SQL Workloads to SQL Server in Azure Virtual Machine
 
-The students will configure the environments for a data migration, including the provisioning of a SQL Server virtual machine (VM) on Azure. They will then perform a data migration to a SQL Server instance that runs on an Azure VM by transferring databases from a SQL Server 2008 R2 environment using Data Migration Assistant (DMA).
+The students will initially evaluate the migration process that they will use to migrate from an on-premises SQL Server 2008 R2 instance to an SQL Server 2017 running in a virtual machine. They will then perform a migration using Data Migration Assistant to move databases. Finally, they will assess a successful migration.
 
-## Lab 4 - Migrate SQL workloads to Azure SQL Database
+## Lab 4 – Migrate SQL Workloads to Azure SQL Database
 
-The students will perform an offline migration using the Azure Database Migration Service (DMS) from an on-premises SQL Server to Azure SQL Database. Prior to this, the student will determine the right SQL Server instance option in Azure to migrate to. They will finalize the migration by using a migration tool to load and move data into the Azure SQL Database.
-
-## Lab 5 - Migrate SQL workloads to SQL Database Managed Instance
-
-There is no lab for this module.
+The students will perform a migration to Azure SQL Database. First, you will perform a schema migration and create the destination database as a pre-requisite, then you migrate from a database running in an on-premises SQL instance to Azure SQL Database. You will perform an online migration using Database Migration Service (DMS), to keep the data in synchronization between the source and the target databases until cut over to the new database.
