@@ -53,7 +53,7 @@ The task for this exercise is:
     | Availability options | No infrastructure redundancy required |
     | Image | Free SQL Server License: SQL Server 2017 Developer on Windows Server 2019 - Gen1 |
     | Azure Spot instance | No |
-    | Size | Standard_D2_v2 |
+    | Size | Standard_D2s_v3 |
     | Username | sqladmin |
     | Password | Pa55w.rdPa55w.rd |
     | Confirm Password | Pa55w.rdPa55w.rd |
