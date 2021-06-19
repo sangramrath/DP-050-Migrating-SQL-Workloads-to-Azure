@@ -42,7 +42,7 @@ The main tasks for this exercise are the following:
 
 ### Open the Total Cost of Ownership (TCO) Calculator
 
-1. Open your browser and navigate to the Azure TCO Calculator, +++https://azure.microsoft.com/pricing/tco/calculator/+++.
+1. Open your browser and navigate to the Azure TCO Calculator, https://azure.microsoft.com/pricing/tco/calculator/.
 1. Under **Define your workloads**, delete any existing workloads in the **Servers** section.
 
 ### Enter the Database workload
@@ -142,7 +142,7 @@ After completing this exercise, you have used the Azure TCO calculator to identi
 
 ## Exercise 2: Understand the stages of migration
 
-In this exercise, you will examine the specifications of your existing server.
+In this exercise, you will examine the specifications of your existing server. The existing server is the Lab Virtual Machine provided to you when performing these labs through a Lab Hoster. Check with the Instructor in case of a doubt.
 
 Estimated Time: 15 Minutes
 
@@ -154,10 +154,10 @@ The main tasks for this exercise are:
 
 ### Determine the amount of memory that is being used on the server
 
-1. Sign in to the **LON-DEV-01** virtual machine running in the classroom environment. The username is **administrator**, and the password is **Pa55w.rd**.
+1. Sign in to the Lab virtual machine provided for the training/workshop, it could be named **LON-DEV-01** or **DP050-SQL2008R2** or **LONDON**. The username is **administrator**, and the password is **Pa55w.rd**.
 1. Use a method of your choice to determine the amount of memory being used by the server.
 
-    > **Tip**: Use System Information, an application included in all modern versions of Windows, to obtain specifications about your server or desktop device. To open System Information, select Start, and then enter System Information into the search field.
+    > **Tip**: Use System Information, an application included in all modern versions of Windows, to obtain specifications about your server or desktop device. To open System Information, select Start, and then enter System Information into the search field. Scroll down under System Summary to view Memory information.
 
 1. Make a note of the value in Notepad.
 
